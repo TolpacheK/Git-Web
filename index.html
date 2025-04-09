@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WhatsApp Clone</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- Форма входу -->
+<div id="loginForm" class="login-form">
+  <h2>Вхід</h2>
+  <input type="text" id="username" placeholder="Ім'я користувача" required>
+  <input type="password" id="password" placeholder="Пароль" required>
+  <button onclick="login()">Увійти</button>
+</div>
+
+<!-- Основний інтерфейс -->
+<div class="header">WhatsApp</div>
+<div class="search-bar">
+  <input type="text" placeholder="Search...">
+</div>
+<ul class="chat-list" id="chatList"></ul>
+<button class="add-chat-button" onclick="toggleNewChatBox()">+</button>
+
+<!-- Форма для додавання нового чату -->
+<div class="new-chat-box" id="newChatBox" style="display: none;">
+  <input type="text" id="chatName" placeholder="Введіть ім'я">
+  <div class="icon-selection">
+    <label for="iconSelect">Виберіть іконку:</label>
+    <select id="iconSelect">
+      <option value="https://via.placeholder.com/50">За замовчуванням</option>
+      <option value="https://via.placeholder.com/50/FF0000/FFFFFF">Червона</option>
+      <option value="https://via.placeholder.com/50/00FF00/FFFFFF">Зелена</option>
+      <option value="https://via.placeholder.com/50/0000FF/FFFFFF">Синя</option>
+      <option value="https://via.placeholder.com/50/FFFF00/FFFFFF">Жовта</option>
+    </select>
+  </div>
+  <button onclick="createChat()">Додати чат</button>
+  <button onclick="toggleNewChatBox()">Закрити</button>
+</div>
+
+<!-- Вікно чату -->
+<div class="chat-window" id="chatWindow" style="display: none;">
+  <div class="chat-window-header">
+    <span id="chatWindowHeader"></span>
+    <button onclick="closeChatWindow()">X</button>
+  </div>
+  <div class="chat-messages" id="chatMessages"></div>
+  <div class="chat-input">
+    <input type="text" id="messageInput" placeholder="Напишіть повідомлення...">
+    <button onclick="sendMessage()">Надіслати</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
